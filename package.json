@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "i18n-pro": "1.3.0-alpha.1",
+    "i18n-pro": "1.3.0-alpha.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

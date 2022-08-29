@@ -1,5 +1,5 @@
 {
-  "name": "my-vue-app",
+  "name": "i18n-pro-react-demo",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -19,5 +19,9 @@
     "@vitejs/plugin-react": "^2.0.1",
     "typescript": "^4.6.4",
     "vite": "^3.0.7"
+  },
+  "stackblitz": {
+    "installDependencies": true,
+    "startCommand": "npm run dev"
   }
 }

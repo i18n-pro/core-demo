@@ -3,9 +3,6 @@ import ReactDOM from 'react-dom/client'
 import { i18n, setI18N } from 'i18n-pro'
 import './index.css'
 
-// 挂载全局对象
-window.i18n = i18n
-
 setI18N({
   formatNumber({ locale, payload }) {
     let res = payload as string
@@ -120,6 +117,12 @@ setI18N({
   },
 })
 
+const bestProgramLang =   ['JavaScript', 'Java', 'C', 'C++', 'Python', 'PHP'][
+  Math.round(Math.random() * 5)
+]
+
+const date = new Date()
+
 function App() {
   const [show, setShow] = useState(false)
   const [locale, setLocale] = useState<string>()
@@ -130,11 +133,6 @@ function App() {
     en: i18n('英文'),
     jp: i18n('日文'),
   }
-  const [bestProgramLang] = useState(
-    ['JavaScript', 'Java', 'C', 'C++', 'Python', 'PHP'][
-      Math.round(Math.random() * 5)
-    ],
-  )
 
   async function resolveI18N() {
     const params = new URLSearchParams(
@@ -207,10 +205,10 @@ function App() {
           <div>{i18n('售价{c0}', 123456.78)}</div>
 
           <div className="title">{i18n('格式化日期')}</div>
-          <div>{i18n('今天的日期是{d0}', new Date())}</div>
+          <div>{i18n('今天的日期是{d0}', date)}</div>
 
           <div className="title">{i18n('格式化时间')}</div>
-          <div>{i18n('当前时间：{t0}', new Date())}</div>
+          <div>{i18n('当前时间：{t0}', time)}</div>
 
           <div className="title">{i18n('格式化复数')}</div>
           <div>{i18n('我有{p0个苹果}', 0)}</div>

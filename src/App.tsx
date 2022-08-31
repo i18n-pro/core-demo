@@ -139,17 +139,17 @@ function App() {
       new URLSearchParams(window.location.search.slice(1)),
     )
     let locale = params.get('locale') || 'zh'
-    let langs =
-      locale === 'zh'
-        ? {}
-        : {
-            [locale]: JSON.parse(
-              JSON.stringify(await import(`../i18n/${locale}.json`)),
-            )?.default,
-          }
-
+    let lang = {}
+    let req = await fetch(`../i18n/${locale}.json`)
+    try {
+      lang = await req.json()
+    } catch (error) {
+      console.error(error)
+    }
     setI18N({
-      langs,
+      langs:{
+        [locale]:lang
+      },
       locale,
     })
 

@@ -2,9 +2,9 @@
   "name": "i18n-pro-react-demo",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
-    "dev": "vite",
+    "startServer": "node ./src/server.js",
+    "dev": "npm run startServer & vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },

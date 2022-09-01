@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import ReactDOM from 'react-dom/client'
 import { i18n, setI18N } from 'i18n-pro'
 import './index.css'
@@ -161,6 +161,16 @@ function App() {
     window.location.search = `?locale=${e.target.value}`
   }
 
+  const request = useCallback(async(locale:string)=>{
+     let req = await fetch(`${window.location.origin.replace('5173','8080')}?locale=${locale}`)
+     try {
+      let msg = await req.text()
+      alert(i18n('收到服务的信息：{0}', msg))
+     } catch (error) {
+      console.error(error)
+     }            
+  }, [])
+
   useEffect(() => {
     resolveI18N()
     const tag = setInterval(() => {
@@ -214,6 +224,22 @@ function App() {
           <div>{i18n('我有{p0个苹果}', 0)}</div>
           <div>{i18n('我有{p0个苹果}', 1)}</div>
           <div>{i18n('我有{p0个苹果}', 5)}</div>
+
+          <div className="title">{i18n('服务端响应')}</div>
+          <span style={{marginBottom:20}}>{i18n('说明：这里简单模拟服务端对客户端不同语言的响应')}</span><br/>
+          {Object.entries(locales).map(([locale,name])=>{
+
+            return (
+              <>
+                <button 
+                  onClick={()=>request(locale)} 
+                >
+                  {i18n('客户端语言为：{0}', name)}
+                </button>
+                &nbsp;
+              </>
+            )
+          })}
         </>
       )}
     </>

@@ -3,3 +3,16 @@
   font-weight: bolder;
   margin: 10px 0 5px 0;
 }
+
+.loading {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: aqua;
+  justify-content: center;
+  align-items: center;
+}

@@ -117,7 +117,7 @@ setI18N({
   },
 })
 
-const bestProgramLang =   ['JavaScript', 'Java', 'C', 'C++', 'Python', 'PHP'][
+const bestProgramLang = ['JavaScript', 'Java', 'C', 'C++', 'Python', 'PHP'][
   Math.round(Math.random() * 5)
 ]
 
@@ -133,6 +133,7 @@ function App() {
     en: i18n('英文'),
     jp: i18n('日文'),
   }
+  const [loading, setLoading] = useState(false)
 
   async function resolveI18N() {
     const params = new URLSearchParams(
@@ -147,8 +148,8 @@ function App() {
       console.error(error)
     }
     setI18N({
-      langs:{
-        [locale]:lang
+      langs: {
+        [locale]: lang,
       },
       locale,
     })
@@ -161,14 +162,19 @@ function App() {
     window.location.search = `?locale=${e.target.value}`
   }
 
-  const request = useCallback(async(locale:string)=>{
-     let req = await fetch(`${window.location.origin.replace('5173','8080')}?locale=${locale}`)
-     try {
+  const request = useCallback(async (locale: string) => {
+    setLoading(true)
+    try {
+      let req = await fetch(
+        `${window.location.origin.replace('5173', '8080')}?locale=${locale}`,
+      )
       let msg = await req.text()
       alert(i18n('收到服务的信息：{0}', msg))
-     } catch (error) {
+    } catch (error) {
+      alert(i18n('请求出错：{0}', error))
       console.error(error)
-     }            
+    }
+    setLoading(false)
   }, [])
 
   useEffect(() => {
@@ -226,22 +232,27 @@ function App() {
           <div>{i18n('我有{p0个苹果}', 5)}</div>
 
           <div className="title">{i18n('服务端响应')}</div>
-          <span style={{marginBottom:20}}>{i18n('说明：这里简单模拟服务端对客户端不同语言的响应')}</span><br/>
-          {Object.entries(locales).map(([locale,name])=>{
-
+          <span style={{ marginBottom: 20 }}>
+            {i18n('说明：这里简单模拟服务端对客户端不同语言的响应')}
+          </span>
+          <br />
+          {Object.entries(locales).map(([locale, name]) => {
             return (
               <>
-                <button 
-                  onClick={()=>request(locale)} 
+                <button
+                  style={{ margin: '5px 5px 0 0' }}
+                  onClick={() => request(locale)}
                 >
                   {i18n('客户端语言为：{0}', name)}
                 </button>
-                &nbsp;
               </>
             )
           })}
         </>
       )}
+      <div className={loading ? 'loading' : ''}>
+        {loading && <span>加载中。。。</span>}
+      </div>
     </>
   )
 }

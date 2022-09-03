@@ -25,5 +25,6 @@
   "你好世界！": "Hello world!",
   "说明：这里简单模拟服务端对客户端不同语言的响应": "Note: Here we simply simulate the response of the server to different languages of the client",
   "客户端语言为：{0}": "The client language is: {0}",
-  "收到服务的信息：{0}": "Received service information: {0}"
+  "收到服务的信息：{0}": "Received service information: {0}",
+  "请求出错：{0}": "Request error: {0}"
 }

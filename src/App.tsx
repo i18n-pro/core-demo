@@ -92,11 +92,11 @@ setI18N({
 
     return res
   },
-  formatPlural({ locale, payload, text, keywords }) {
+  formatPlural({ locale, payload, text, keyword }) {
     let res = text
     switch (locale) {
       case 'en':
-        switch (keywords) {
+        switch (keyword) {
           case 'apples':
             if (payload == 0) {
               res = 'no apple'

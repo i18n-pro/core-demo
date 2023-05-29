@@ -1,26 +1,30 @@
 const http = require('http')
-const { setI18N, withI18N } = require('i18n-pro')
+const { initI18n } = require('i18n-pro')
 const cht = require('../i18n/cht.json')
 const en = require('../i18n/en.json')
 const jp = require('../i18n/jp.json')
 
-setI18N({
-  langs:{
+const { setI18n, withI18n } = initI18n({
+  namespace: 'server',
+})
+
+setI18n({
+  langs: {
     cht,
     en,
-    jp
-  }
+    jp,
+  },
 })
 
 http
-  .createServer(function(req, res) {
+  .createServer(function (req, res) {
     const regexp = /locale=(\w+)/
     const matchReg = req.url.match(regexp)
-    const [,locale] = (matchReg || [])
-    const { i18n } = withI18N({locale})
-    
+    const [, locale] = matchReg || []
+    const { t } = withI18n({ locale })
+
     res.setHeader('Access-Control-Allow-Origin', '*')
-    res.write(i18n('你好世界！'))
+    res.write(t('你好世界！'))
     res.end()
   })
   .listen(8080)

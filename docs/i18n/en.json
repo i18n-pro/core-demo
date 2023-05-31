@@ -1,0 +1,16 @@
+{
+  "概述": "Summary",
+  "这是一个{0}应用在{1}上的一个简单示例，由于当前库是一个纯{2}的库，没有任务其他框架或库的逻辑有关联，因此在其他的UI库（例如{3}）使用方式没有不同": "This is a simple example of {0} applied to {1}. As the current library is a pure {2} library, there are no tasks related to other frameworks or library logic, so the usage in other UI libraries (such as {3}) is not different",
+  "特别说明": "Special Instructions",
+  "如果要正常体验模拟服务端响应的话，下图红色部分，需要确保正常已开启了两个服务": "If you want to experience the simulated server response normally, in the red part of the following figure, it is necessary to ensure that two services have been started normally",
+  "示例图片": "Sample image",
+  "两个服务分别是：": "The two services are:",
+  "前端页面的服务（端口：5173），用于展示示例": "Front end page service (port: 5173), used to display examples",
+  "后端接口服务（端口：8080），用于接收并相应点击按钮的请求": "Backend interface service (port: 8080), used to receive and corresponding click button requests",
+  "如果当前是通过{0}打开的，两个服务默认可以正常启动，可以在这个位置看到已打开的服务列表": "If it is currently opened through {0}, both services can start normally by default, and a list of opened services can be seen in this location",
+  "如果是通过{0}打开的，默认只能一个终端启动一个服务，但是可以新建一个终端，来启动另一个服务，默认启动是{1}": "If opened through {0}, by default only one terminal can start one service, but a new terminal can be created to start another service. The default startup is {1}",
+  "前端页面的服务（端口：5173）": "Frontend page services (port: 5173)",
+  "添加终端操作如下：": "The operation to add a terminal is as follows:",
+  "在新终端输入如下命令来启动{0}": "Enter the following command on the new terminal to start {0}",
+  "后端接口服务（端口：8080）": "Backend interface service (port: 8080)"
+}

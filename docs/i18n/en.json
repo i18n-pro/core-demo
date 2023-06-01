@@ -12,5 +12,6 @@
   "前端页面的服务（端口：5173）": "Frontend page services (port: 5173)",
   "添加终端操作如下：": "The operation to add a terminal is as follows:",
   "在新终端输入如下命令来启动{0}": "Enter the following command on the new terminal to start {0}",
-  "后端接口服务（端口：8080）": "Backend interface service (port: 8080)"
+  "后端接口服务（端口：8080）": "Backend interface service (port: 8080)",
+  "效果如下：": "The effect is as follows:"
 }

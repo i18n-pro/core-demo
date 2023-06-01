@@ -25,7 +25,10 @@ export default function MarkDown(props: any) {
       {t(
         '如果要正常体验模拟服务端响应的话，下图红色部分，需要确保正常已开启了两个服务',
       )}
-      <Image alt={t('示例图片')} src="src/assets/demo.png" />
+      <Image
+        alt={t('示例图片')}
+        src="https://s3.bmp.ovh/imgs/2023/06/01/9454bc713e431739.png"
+      />
       {t('两个服务分别是：')}
       <List
         items={[
@@ -40,7 +43,10 @@ export default function MarkDown(props: any) {
         '如果当前是通过{0}打开的，两个服务默认可以正常启动，可以在这个位置看到已打开的服务列表',
         ' `CodeSandBox` ',
       )}
-      <Image alt={t('示例图片')} src="src/assets/codesandbox.png" />
+      <Image
+        alt={t('示例图片')}
+        src="https://s3.bmp.ovh/imgs/2023/06/01/4f1545b5d2dd01e9.png"
+      />
       <Break />
       <Break />
       {t(
@@ -51,12 +57,20 @@ export default function MarkDown(props: any) {
       <Break />
       <Break />
       {t('添加终端操作如下：')}
-      <Image alt={t('示例图片')} src="src/assets/stackblitz-add-terminal.png" />
+      <Image
+        alt={t('示例图片')}
+        src="https://s3.bmp.ovh/imgs/2023/06/01/309bee8bb93b8ff9.png"
+      />
       {t(
         '在新终端输入如下命令来启动{0}',
         render(<Bold>{t('后端接口服务（端口：8080）')}</Bold>),
       )}
       <CodeBlock langType="bash" code={`npm run server`} />
+      {t('效果如下：')}
+      <Image
+        alt={t('示例图片')}
+        src="https://s3.bmp.ovh/imgs/2023/06/02/4e7d3f425b3e6ff0.png"
+      />
     </>
   )
 }

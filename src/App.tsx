@@ -9,19 +9,20 @@ const bestProgramLang = ['JavaScript', 'Java', 'C', 'C++', 'Python', 'PHP'][
 
 const date = new Date()
 
+const locales = {
+  zh: '简体中文',
+  cht: '繁體中文',
+  en: 'English',
+  jp: '日本語',
+}
+
 function App() {
   const [show, setShow] = useState(false)
   const [locale, setLocale] = useState<string>()
   const [time, setTime] = useState(new Date())
-  const locales = {
-    zh: '简体中文',
-    cht: '繁體中文',
-    en: 'English',
-    jp: '日本語',
-  }
   const [loading, setLoading] = useState(false)
 
-  async function resolveI18N() {
+  async function resolveI18n() {
     const params = new URLSearchParams(
       new URLSearchParams(window.location.search.slice(1)),
     )
@@ -64,7 +65,7 @@ function App() {
   }, [])
 
   useEffect(() => {
-    resolveI18N()
+    resolveI18n()
     const tag = setInterval(() => {
       setTime(new Date())
     }, 1000)

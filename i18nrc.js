@@ -7,12 +7,13 @@ module.exports = {
   output: {
     path: path.join(__dirname, './i18n/'),
   },
-  translator: 'baidu',
-  baiduConfig: {
-    appid: '20220530001234107',
-    key: '4DsAkNxFeKPg5wMLrrVG',
-    from: 'zh',
-    to: ['cht', 'en', 'jp'],
-    delay: 1,
+  translator: 'googlex',
+  googlexConfig: {
+    from: 'zh-CN',
+    to: ['en', 'ja', 'zh-TW'],
+    codeLocaleMap: {
+      ja: 'jp',
+      'zh-TW': 'cht',
+    },
   },
 }

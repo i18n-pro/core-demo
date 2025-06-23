@@ -1,9 +1,8 @@
-declare function t(
-  text: string,
-  ...args: Array<string | number | unknown>
-): string
+import { Translate, SetI18n } from 'i18n-pro'
 
-declare function setI18n(props?: {
-  locale?: string
-  langs?: Record<string, Record<string, string>>
-}): any
+declare global {
+  interface Window {
+    t: Translate
+    setI18n: SetI18n
+  }
+}

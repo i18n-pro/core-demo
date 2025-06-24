@@ -4,7 +4,7 @@ const cht = require('../i18n/cht.json')
 const en = require('../i18n/en.json')
 const jp = require('../i18n/jp.json')
 
-const { setI18n, withI18n } = initI18n({
+const { setI18n, t: initT } = initI18n({
   namespace: 'server',
 })
 
@@ -21,7 +21,7 @@ http
     const regexp = /locale=(\w+)/
     const matchReg = req.url.match(regexp)
     const [, locale] = matchReg || []
-    const { t } = withI18n({ locale })
+    let t = initT.withLocale(locale)
 
     res.setHeader('Access-Control-Allow-Origin', '*')
     res.write(t('你好世界！'))

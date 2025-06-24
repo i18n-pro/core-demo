@@ -1,4 +1,5 @@
 {
+  "motto": "Talk is cheap. Show me the code",
   "基础示例": "Basic Example",
   "简单的一段描述": "A brief description",
   "{0}是世界上最好的语言？我不信": "Is {0} the best language in the world? I don't believe it",
@@ -23,5 +24,6 @@
   "加载中。。。": "Loading...",
   "年": "year",
   "月": "month",
-  "日": "day"
+  "日": "day",
+  "自定义 key": "Custom Key"
 }

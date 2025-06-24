@@ -5,4 +5,7 @@ declare global {
     t: Translate
     setI18n: SetI18n
   }
+
+  declare const t: Translate
+  declare const setI18n: SetI18n
 }

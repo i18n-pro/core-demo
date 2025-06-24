@@ -88,6 +88,8 @@ function App() {
               )
             })}
           </select>
+          <div className="title">{t('自定义 key')}</div>
+          <div>{t.t('motto', `又不是不能用`)}</div>
           <div className="title">{t('基础示例')}</div>
           <div>{t('简单的一段描述')}</div>
           <div>{t('{0}是世界上最好的语言？我不信', bestProgramLang)}</div>

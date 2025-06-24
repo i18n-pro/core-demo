@@ -8,16 +8,17 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "docs": "jtm run",
-    "docs-translate": "i18n t -P docs"
+    "docs-i18n": "i18n t -P docs"
   },
   "dependencies": {
-    "i18n-pro": "2",
+    "i18n-pro": "3.0.0-alpha.0",
     "jsx-to-md": "^0.11.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@eyelly/prettier-config": "^1.0.0",
+    "@types/node": "^24.0.3",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.0.1",

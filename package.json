@@ -11,7 +11,7 @@
     "docs-translate": "i18n t -P docs"
   },
   "dependencies": {
-    "i18n-pro": "2.0.0-alpha.4",
+    "i18n-pro": "2",
     "jsx-to-md": "^0.11.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

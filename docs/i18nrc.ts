@@ -9,7 +9,7 @@ export default {
   funcName: 't',
   // entry: join(__dirname, './src/'),
   // fileRegExp: /\.[jt]s$/,
-  input: 'docs/**/*.{js,ts,tsx}',
+  input: './**/*.{js,ts,tsx}',
   output: {
     path: join(__dirname, './i18n/'),
   },

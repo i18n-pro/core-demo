@@ -1,4 +1,13 @@
-import { Bold, Break, CodeBlock, H1, Image, List, render } from 'jsx-to-md'
+import {
+  Bold,
+  Break,
+  CodeBlock,
+  H1,
+  Image,
+  Link,
+  List,
+  render,
+} from 'jsx-to-md'
 import { initI18n } from 'i18n-pro'
 import en from './i18n/en.json'
 
@@ -11,8 +20,44 @@ export default function MarkDown(props: any) {
     },
   })
 
+  const localeSuffixMap = {
+    zh: 'zh-CN',
+    en: '',
+  }
+
+  const suffix = localeSuffixMap[props.locale as 'zh' | 'en']
+
+  const filename = `README${suffix ? `_${suffix}` : ''}.md`
+
   return (
     <>
+      <H1>{t('版本说明')}</H1>
+      {t('当前示例对应的是{0}版本，其他版本如下', ' `v3` ')}
+      <List
+        items={[
+          'U',
+          [
+            'v2',
+            [
+              'U',
+              <Link
+                href={`https://codesandbox.io/p/github/i18n-pro/core-demo/v2?file=${filename}`}
+              >
+                Open in CodeSandbox
+              </Link>,
+              <Link
+                href={`https://stackblitz.com/github/i18n-pro/core-demo/tree/v2?file=${filename}`}
+              >
+                <Image
+                  alt="Open in StackBlitz"
+                  title="Open in StackBlitz"
+                  src="https://developer.stackblitz.com/img/open_in_stackblitz_small.svg"
+                />
+              </Link>,
+            ],
+          ],
+        ]}
+      />
       <H1>{t('概述')}</H1>
       {t(
         '这是一个{0}应用在{1}上的一个简单示例，由于当前库是一个纯{2}的库，没有任务其他框架或库的逻辑有关联，因此在其他的UI库（例如{3}）使用方式没有不同',

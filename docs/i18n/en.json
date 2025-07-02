@@ -13,5 +13,7 @@
   "添加终端操作如下：": "The operation to add a terminal is as follows:",
   "在新终端输入如下命令来启动{0}": "Enter the following command on the new terminal to start {0}",
   "后端接口服务（端口：8080）": "Backend interface service (port: 8080)",
-  "效果如下：": "The effect is as follows:"
+  "效果如下：": "The effect is as follows:",
+  "版本说明": "Version Description",
+  "当前示例对应的是{0}版本，其他版本如下": "The current example corresponds to the {0} version, and the other versions are as follows"
 }

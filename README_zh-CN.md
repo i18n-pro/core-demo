@@ -1,4 +1,11 @@
 
+# 版本说明
+当前示例对应的是 `v3` 版本，其他版本如下
+* v2
+   * [Open in CodeSandbox](https://codesandbox.io/p/github/i18n-pro/core-demo/v2?file=README_zh-CN.md)
+   * [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz_small.svg "Open in StackBlitz")](https://stackblitz.com/github/i18n-pro/core-demo/tree/v2?file=README_zh-CN.md)
+
+
 # 概述
 这是一个 `i18n-pro` 应用在 `React` 上的一个简单示例，由于当前库是一个纯 `JavaScript` 的库，没有任务其他框架或库的逻辑有关联，因此在其他的UI库（例如 `Vue` ）使用方式没有不同
 # 特别说明
